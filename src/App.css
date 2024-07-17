@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 .App {
   text-align: center;
 }
 
 body {
+  font-family: "Roboto Mono", monospace;
   background-color: #000;
 }
 
@@ -46,4 +48,12 @@ body {
 
 .header li {
  margin: 5%;
+}
+
+h1 {
+  color: #fff;
+}
+
+footer {
+  background-color: #fff;
 }
