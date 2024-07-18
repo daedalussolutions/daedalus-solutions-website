@@ -5,12 +5,12 @@ function Home() {
     return (
         <div className="Home">
             <div className="home-container">
-                <div>
+                <div className="front-page-text">
                     <h1>Daedalus<br/>Solutions</h1>
                     <h2>Professional, modern development</h2>
                 </div>
                 <div>
-                    <img src={logo}  height={600} />
+                    <img src={logo} className="front-page-logo" height={600} />
                 </div>
             </div>
         </div>
