@@ -135,3 +135,29 @@ footer {
   padding: 4px;
 }
 
+.About {
+  padding: 0.1px;
+  color: #fff;
+  background-color: #000;
+  height: 80vh;
+}
+
+.About h3 {
+  margin: 10%;
+}
+
+.social-media-icons .linkedin,
+.social-media-icons .github,
+.social-media-icons .twitter{
+  color:#000;
+  transition-duration: 200ms;
+  margin: 10px;
+  
+}
+
+.social-media-icons .linkedin:hover,
+.social-media-icons .github:hover,
+.social-media-icons .twitter:hover{
+  transform: scale(1.2);
+  transition-duration: 200ms;
+}
