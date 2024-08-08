@@ -55,6 +55,10 @@ body {
   display: flex;
 }
 
+.header img {
+  height: 80px;
+}
+
 .header li {
   margin: 10%;
 }
@@ -160,4 +164,50 @@ footer {
 .social-media-icons .twitter:hover{
   transform: scale(1.2);
   transition-duration: 200ms;
+}
+
+@media (max-width: 800px) {
+  .header {
+    padding: 0;
+    width: 100vh;
+    display: block;
+  }
+  .header ul {
+    display: flex;
+  }
+  .header img {
+    height: 100%;
+  }
+  
+  .header li {
+    font-size: 48px;
+    margin: 6%;
+  }
+  .home-container {
+    height: 100%;
+    width: 90vh;
+    background-color: #000;
+    display: block;
+    margin: 50% 10%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+
+  .home-container h1 {
+    padding-top: 50px;
+    margin: 0;
+  }
+
+  .footer {
+    margin-top: 70%;
+    width: 100vh;
+  }
+
+  .About {
+    width: 100vh;
+  }
+  .contact-form {
+    width: 100vh;
+  }
+
+  
 }

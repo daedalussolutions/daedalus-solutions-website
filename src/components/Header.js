@@ -10,7 +10,7 @@ function Header() {
     return (
         <Router>
             <header className="header">
-                <img src={logo} alt="Company Logo" className="logo" height={80} />
+                <img src={logo} alt="Company Logo" className="logo"/>
                 <nav>
                     <ul>
                         <li><Link to="/">Home</Link></li>
