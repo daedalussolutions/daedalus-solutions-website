@@ -1,78 +1,70 @@
 import React, { useState } from 'react';
 
 function ContactForm() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [subject, setSubject] = useState('');
+  const [message, setMessage] = useState('');
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
+  const domainName = 'daedalussolutions.xyz';
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const response = await fetch('https://mail.daedalussolutions.xyz:443/send-email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ name, email, subject, message, domain: domainName }),
     });
-  };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // You can handle form submission here, e.g., send the data to a server.
-    console.log(formData);
+    if (response.ok) {
+      alert('Email sent successfully');
+    } else {
+      alert('Error sending email');
+    }
   };
 
   return (
-    <div className="contact-form">
-      <form onSubmit={handleSubmit}>
-        <div>
+    <div className="contact-form-bg">
+      <div className='contact-form'>
+        <form onSubmit={handleSubmit}>
           <label>Name:</label>
-          <br/>
           <input
             type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="Name"
             required
           />
-        </div>
-        <div>
           <label>Email:</label>
-          <br/>
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label>Subject:</label>
-          <br/>
           <input
             type="text"
-            name="subject"
-            value={formData.subject}
-            onChange={handleChange}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Email"
             required
-          ></input>
-        </div>
-        <br/>
-        <div>
+          />
+          <label>Subject:</label>
+          <input
+            type="text"
+            value={subject}
+            onChange={(e) => setSubject(e.target.value)}
+            placeholder="Subject"
+            required
+          />
           <label>Message:</label>
-          <br/>
           <textarea
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            placeholder="Message"
             required
-          ></textarea>
-        </div>
-        <div>
-          <button type="submit">Submit</button>
-        </div>
-      </form>
+          />
+          <input type="hidden" name="domain" value={domainName} />
+          <button type="submit">Send</button>
+        </form>
+      </div>
     </div>
   );
 }

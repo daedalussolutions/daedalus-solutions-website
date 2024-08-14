@@ -119,15 +119,31 @@ button:hover {
   margin-top: 3%;
 }
 
-.contact-form {
+.contact-form-bg {
   color: #fff;
   background-color: #000;
   height: 80.4vh;
 }
 
+.contact-form {
+  width: 70%;
+  margin: 0% auto;
+}
+
 .contact-form form {
  padding-top: 8%; 
 }
+
+.contact-form label {
+  display: block;
+}
+
+.contact-form button {
+  margin: auto;
+  display: block;
+}
+
+
 
 .contact-form input, textarea {
   padding: 0.5%;
