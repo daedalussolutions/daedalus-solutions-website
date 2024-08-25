@@ -11,7 +11,7 @@ function ContactForm() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const response = await fetch('https://mail.daedalussolutions.xyz:443/send-email', {
+    const response = await fetch('https://mail.daedalussolutions.online:443/send-email', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
